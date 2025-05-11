@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyakit - WanHewani</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-blue-600 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-stethoscope text-white text-2xl mr-3"></i>
+                    <span class="text-white font-bold text-xl">WanHewani</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Home</a>
+                    <a href="/penyakit" class="text-white bg-blue-700 px-3 py-2 rounded">Penyakit</a>
+                    <a href="/gejala" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Gejala</a>
+                    <a href="/index" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Diagnosa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Ayam (Active/Unlocked) -->
+                <div class="animal-selector active relative bg-white rounded-lg shadow-md border-2 border-blue-500 p-4 cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="{{ url_for('static', filename='images/ayam.jpeg') }}" class="w-32 h-32 rounded-full" alt="Ayam" class="mb-3 rounded">
+                        <h3 class="font-medium text-center">Ayam</h3>
+                    </div>
+                </div>
+                
+                <!-- Kambing (Locked) -->
+                <div class="animal-selector locked relative bg-white rounded-lg shadow-md border-2 border-gray-200 p-4 cursor-not-allowed">
+                    <div class="locked-overlay">
+                        <div class="bg-white px-3 py-2 rounded-full shadow-md flex items-center">
+                            <i class="fas fa-lock text-gray-500 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Terkunci</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center opacity-50">
+                        <img src="{{ url_for('static', filename='images/kambing.jpeg') }}" class="w-32 h-32 rounded-full"  alt="Kambing" class="mb-3 rounded">
+                        <h3 class="font-medium text-center">Kambing</h3>
+                    </div>
+                </div>
+                
+                <!-- Sapi (Locked) -->
+                <div class="animal-selector locked relative bg-white rounded-lg shadow-md border-2 border-gray-200 p-4 cursor-not-allowed">
+                    <div class="locked-overlay">
+                        <div class="bg-white px-3 py-2 rounded-full shadow-md flex items-center">
+                            <i class="fas fa-lock text-gray-500 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Terkunci</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center opacity-50">
+                        <img src="{{ url_for('static', filename='images/sapi.jpeg') }}" class="w-32 h-32 rounded-full" alt="Sapi" class="mb-3 rounded">
+                        <h3 class="font-medium text-center">Sapi</h3>
+                    </div>
+                </div>
+                
+                <!-- Domba (Locked) -->
+                <div class="animal-selector locked relative bg-white rounded-lg shadow-md border-2 border-gray-200 p-4 cursor-not-allowed">
+                    <div class="locked-overlay">
+                        <div class="bg-white px-3 py-2 rounded-full shadow-md flex items-center">
+                            <i class="fas fa-lock text-gray-500 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Terkunci</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center opacity-50">
+                        <img src="{{ url_for('static', filename='images/dombq.jpeg') }}" class="w-32 h-32 rounded-full" alt="Domba" class="mb-3 rounded">
+                        <h3 class="font-medium text-center">Domba</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 bg-yellow-50 border border-yellow-200 rounded-lg p-4 py-3">
+                <div class="flex items-start">
+                    <i class="fas fa-lightbulb text-yellow-500 mt-1 mr-2"></i>
+                    <p class="text-sm text-gray-700">
+                        <span class="font-medium text-yellow-800">Fitur Premium:</span> 
+                        Diagnosa untuk hewan lainnya tersedia dalam versi premium. Silakan hubungi admin untuk informasi lebih lanjut.
+                    </p>
+                </div>
+            </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 m">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6">
+                <h1 class="text-3xl font-bold text-white flex items-center">
+                    <i class="fas fa-virus mr-3"></i>
+                    Informasi Penyakit Ayam
+                </h1>
+                <p class="text-blue-100 mt-2">Pelajari lebih lanjut tentang berbagai penyakit yang sering menyerang ayam</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-0.5">
+                            <i class="fas fa-info-circle text-blue-500 text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-blue-800">Informasi Penting</h3>
+                            <div class="mt-2 text-sm text-blue-700">
+                                <p>Penanganan penyakit pada ayam sebaiknya dilakukan oleh dokter hewan profesional. Informasi di bawah ini hanya bersifat edukatif untuk membantu pengenalan gejala dan pencegahan awal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newcastle Disease -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                    <div class="bg-gradient-to-r from-red-500 to-red-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fas fa-virus-covid mr-2"></i>
+                            P01: Newcastle Disease (ND)
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                                <img src="/api/placeholder/300/200" alt="Newcastle Disease" class="rounded-lg shadow-md">
+                                <div class="mt-4 bg-red-50 p-3 rounded-lg border border-red-100">
+                                    <h4 class="font-semibold text-red-800 text-sm mb-1">Tingkat Keparahan:</h4>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                                        <span class="text-red-700">Sangat Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-lg font-semibold mb-2 text-gray-800">Deskripsi</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Newcastle Disease (ND) atau yang dikenal dengan Tetelo adalah penyakit viral yang sangat menular dan mematikan yang menyerang sistem pernapasan, pencernaan, dan saraf pada unggas. Penyakit ini disebabkan oleh virus Avian paramyxovirus tipe 1 dan dapat menyebar dengan cepat dalam populasi ayam.
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-clipboard-list text-blue-500 mr-2"></i>
+                                            Gejala Umum
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Gangguan pernapasan (sesak napas, batuk)</li>
+                                            <li>Diare kehijauan</li>
+                                            <li>Pembengkakan kepala dan leher</li>
+                                            <li>Kejang dan kelumpuhan</li>
+                                            <li>Penurunan produksi telur yang drastis</li>
+                                            <li>Kematian mendadak</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-shield-virus text-green-500 mr-2"></i>
+                                            Pencegahan
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Vaksinasi rutin sejak DOC (Day Old Chick)</li>
+                                            <li>Biosekuriti ketat pada peternakan</li>
+                                            <li>Isolasi ayam yang sakit</li>
+                                            <li>Pembersihan dan desinfeksi kandang secara berkala</li>
+                                            <li>Hindari kontak dengan unggas liar</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                    <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                                        <i class="fas fa-syringe text-blue-500 mr-2"></i>
+                                        Pengobatan
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        Tidak ada pengobatan khusus untuk virus ND, tetapi pengobatan suportif dapat dilakukan untuk meredakan gejala dan mencegah infeksi sekunder. Pemberian antibiotik dapat membantu mencegah infeksi bakteri sekunder. Konsultasi dengan dokter hewan sangat dianjurkan untuk penanganan yang tepat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avian Influenza -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fas fa-viruses mr-2"></i>
+                            P02: Avian Influenza (Flu Burung)
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                                <img src="/api/placeholder/300/200" alt="Avian Influenza" class="rounded-lg shadow-md">
+                                <div class="mt-4 bg-purple-50 p-3 rounded-lg border border-purple-100">
+                                    <h4 class="font-semibold text-purple-800 text-sm mb-1">Tingkat Keparahan:</h4>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-skull text-purple-500 mr-2"></i>
+                                        <span class="text-purple-700">Ekstrem (Zoonosis)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-lg font-semibold mb-2 text-gray-800">Deskripsi</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Avian Influenza atau flu burung adalah penyakit viral yang sangat menular dan berbahaya yang disebabkan oleh virus influenza tipe A. Beberapa strain virus ini, seperti H5N1, dapat menyebabkan wabah dengan tingkat kematian hingga 100% pada unggas terinfeksi, dan dapat menular ke manusia (zoonosis).
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-clipboard-list text-blue-500 mr-2"></i>
+                                            Gejala Umum
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Penurunan nafsu makan yang drastis</li>
+                                            <li>Gangguan pernapasan parah</li>
+                                            <li>Bengkak pada kepala, kelopak mata, dan jengger</li>
+                                            <li>Bercak perdarahan pada kaki</li>
+                                            <li>Diare</li>
+                                            <li>Kematian mendadak dalam jumlah besar</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-shield-virus text-green-500 mr-2"></i>
+                                            Pencegahan
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Biosekuriti ketat dan terisolasi</li>
+                                            <li>Vaksinasi (pada daerah endemis tertentu)</li>
+                                            <li>Pemantauan kesehatan unggas secara rutin</li>
+                                            <li>Hindari kontak dengan unggas liar</li>
+                                            <li>Segera laporkan kasus kematian mendadak</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                                    <h4 class="font-semibold text-red-800 mb-2 flex items-center">
+                                        <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                                        Peringatan Khusus
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        Avian Influenza adalah penyakit zoonosis yang dapat menular ke manusia dengan risiko kematian tinggi. Jika mencurigai kasus flu burung, segera laporkan ke Dinas Peternakan atau otoritas kesehatan hewan setempat. Gunakan alat pelindung diri saat menangani unggas yang dicurigai terinfeksi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gumboro -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fas fa-virus mr-2"></i>
+                            P03: Gumboro (Infectious Bursal Disease)
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                                <img src="/api/placeholder/300/200" alt="Gumboro" class="rounded-lg shadow-md">
+                                <div class="mt-4 bg-blue-50 p-3 rounded-lg border border-blue-100">
+                                    <h4 class="font-semibold text-blue-800 text-sm mb-1">Tingkat Keparahan:</h4>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation-circle text-blue-500 mr-2"></i>
+                                        <span class="text-blue-700">Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-lg font-semibold mb-2 text-gray-800">Deskripsi</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Penyakit Gumboro atau Infectious Bursal Disease (IBD) adalah penyakit viral yang menyerang sistem kekebalan ayam, terutama pada ayam muda (3-6 minggu). Virus ini menyerang bursa Fabricius, organ yang bertanggung jawab untuk produksi antibodi pada unggas muda, sehingga melemahkan sistem imun ayam dan membuatnya rentan terhadap infeksi lainnya.
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-clipboard-list text-blue-500 mr-2"></i>
+                                            Gejala Umum
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Diare keputihan</li>
+                                            <li>Bulu kusam dan mengkerut</li>
+                                            <li>Depresi dan lesu</li>
+                                            <li>Gemetar</li>
+                                            <li>Peradangan kloaka</li>
+                                            <li>Kematian mendadak dalam 3-5 hari setelah infeksi</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-shield-virus text-green-500 mr-2"></i>
+                                            Pencegahan
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Vaksinasi pada induk dan anak ayam</li>
+                                            <li>Sanitasi kandang yang baik</li>
+                                            <li>Biosekuriti ketat</li>
+                                            <li>Pengaturan stres dan manajemen kandang</li>
+                                            <li>Pemberian suplemen vitamin untuk meningkatkan daya tahan tubuh</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                    <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                                        <i class="fas fa-syringe text-blue-500 mr-2"></i>
+                                        Pengobatan
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        Tidak ada pengobatan spesifik untuk virus Gumboro. Terapi suportif seperti pemberian elektrolit, vitamin, dan antibiotik untuk mencegah infeksi sekunder dapat diberikan. Ayam yang telah sembuh akan tetap mengalami imunosupresi dan pertumbuhan yang terhambat. Vaksinasi adalah cara terbaik untuk pencegahan.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coryza -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                    <div class="bg-gradient-to-r from-green-500 to-green-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fas fa-bacterium mr-2"></i>
+                            P04: Coryza (Snot)
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                                <img src="/api/placeholder/300/200" alt="Coryza" class="rounded-lg shadow-md">
+                                <div class="mt-4 bg-green-50 p-3 rounded-lg border border-green-100">
+                                    <h4 class="font-semibold text-green-800 text-sm mb-1">Tingkat Keparahan:</h4>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation text-green-500 mr-2"></i>
+                                        <span class="text-green-700">Menengah</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-lg font-semibold mb-2 text-gray-800">Deskripsi</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Coryza atau Snot adalah penyakit pernapasan menular pada unggas yang disebabkan oleh bakteri Avibacterium paragallinarum (sebelumnya dikenal sebagai Haemophilus paragallinarum). Penyakit ini ditandai dengan peradangan pada sinus dan saluran pernapasan atas. Meskipun tingkat kematiannya rendah, penyakit ini dapat menyebabkan kerugian ekonomi karena penurunan produksi telur dan penambahan berat badan yang terhambat.
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-clipboard-list text-blue-500 mr-2"></i>
+                                            Gejala Umum
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Keluarnya cairan dari hidung dan mata</li>
+                                            <li>Pembengkakan pada wajah dan jengger</li>
+                                            <li>Bernapas dengan mulut terbuka</li>
+                                            <li>Bersin dan batuk</li>
+                                            <li>Penurunan nafsu makan</li>
+                                            <li>Penurunan produksi telur</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-shield-virus text-green-500 mr-2"></i>
+                                            Pencegahan
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Vaksinasi pada ayam sebelum usia produksi</li>
+                                            <li>Manajemen lingkungan kandang yang baik</li>
+                                            <li>Ventilasi yang memadai</li>
+                                            <li>Isolasi ayam yang sakit</li>
+                                            <li>Sanitasi peralatan dan kandang</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                                    <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                                        <i class="fas fa-capsules text-green-500 mr-2"></i>
+                                        Pengobatan
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        Pengobatan Coryza dapat dilakukan dengan antibiotik seperti eritromisin, tetrasiklin, atau sulfonamida. Perbaikan kondisi kandang seperti ventilasi yang baik dan mengurangi kelembaban juga penting dalam proses penyembuhan. Pengobatan harus dilakukan di bawah pengawasan dokter hewan untuk hasil yang optimal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolera Ayam -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fas fa-bacterium mr-2"></i>
+                            P05: Kolera Ayam (Fowl Cholera)
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-4 md:mb-0 md:mr-6">
+                                <img src="/api/placeholder/300/200" alt="Kolera Ayam" class="rounded-lg shadow-md">
+                                <div class="mt-4 bg-yellow-50 p-3 rounded-lg border border-yellow-100">
+                                    <h4 class="font-semibold text-yellow-800 text-sm mb-1">Tingkat Keparahan:</h4>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                                        <span class="text-yellow-700">Tinggi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-lg font-semibold mb-2 text-gray-800">Deskripsi</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Kolera Ayam atau Fowl Cholera adalah penyakit bakterial serius yang disebabkan oleh Pasteurella multocida. Penyakit ini dapat menyerang ayam dari segala usia, tetapi lebih sering pada ayam dewasa. Kolera ayam dapat terjadi dalam bentuk akut yang menyebabkan kematian mendadak atau bentuk kronis yang menyebabkan infeksi lokalisasi pada sendi, sinus, atau jengger.
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-clipboard-list text-blue-500 mr-2"></i>
+                                            Gejala Umum
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Demam tinggi</li>
+                                            <li>Diare kehijauan atau kekuningan</li>
+                                            <li>Penurunan nafsu makan yang drastis</li>
+                                            <li>Pembengkakan pada sendi, wajah, dan jengger</li>
+                                            <li>Kesulitan bernapas</li>
+                                            <li>Penurunan produksi telur yang signifikan</li>
+                                            <li>Kematian mendadak dalam kasus akut</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                            <i class="fas fa-shield-virus text-green-500 mr-2"></i>
+                                            Pencegahan
+                                        </h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>Vaksinasi rutin</li>
+                                            <li>Pengendalian hama (tikus, burung liar) sebagai vektor</li>
+                                            <li>Biosekuriti yang ketat</li>
+                                            <li>Sanitasi kandang dan peralatan</li>
+                                            <li>Isolasi ayam baru sebelum dimasukkan ke kelompok</li>
+                                            <li>Pembuangan bangkai dengan benar</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                                    <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                                        <i class="fas fa-capsules text-yellow-500 mr-2"></i>
+                                        Pengobatan
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        Kolera ayam dapat diobati dengan antibiotik seperti sulfonamida, penisilin, atau tetrasiklin. Pengobatan harus segera diberikan pada tanda-tanda awal penyakit untuk hasil terbaik. Ayam yang terinfeksi harus dikarantina untuk mencegah penyebaran. Pada kasus kronis, pengobatan mungkin tidak seefektif pada kasus akut yang dideteksi dini.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Feature Card -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mt-8 border-2 border-yellow-400">
+            <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 p-4">
+                <h2 class="text-xl font-bold text-white flex items-center">
+                    <i class="fas fa-crown mr-2"></i>
+                    Fitur Premium
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0">
+                        <img src="/api/placeholder/150/150" alt="Premium Features" class="rounded-lg">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Tingkatkan ke Versi Premium!</h3>
+                        <p class="text-gray-600 mb-4">
+                            Dapatkan akses ke diagnosa untuk semua jenis hewan ternak seperti kambing, sapi, dan domba.
+                            Fitur tambahan juga termasuk:
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Diagnosa untuk semua jenis hewan ternak</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Rekomendasi pengobatan lengkap</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Konsultasi dengan dokter hewan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Laporan diagnosa yang dapat diunduh</span>
+                            </li>
+                        </ul>
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg mt-4 shadow-md transition flex items-center">
+                            <a href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025051104720328"></a>
+                            <i class="fas fa-crown mr-2"></i>
+                            Dapatkan Premium
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-stethoscope text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">WanHewani</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Web untuk diagnosa penyakit hewan</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Kontak</h3>
+                        <div class="mt-4 space-y-2">
+                            <a href="#" class="text-gray-300 hover:text-white block">
+                                <i class="fas fa-envelope mr-2"></i>WanHewani@mantap.com
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-white block">
+                                <i class="fas fa-phone mr-2"></i>085279486060
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 mt-6 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 WanHewani. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
+<!-- End of the code snippet -->
