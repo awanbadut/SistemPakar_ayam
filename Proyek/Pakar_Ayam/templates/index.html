@@ -20,7 +20,7 @@
                     <a href="/" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Home</a>
                     <a href="/penyakit" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Penyakit</a>
                     <a href="/gejala" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Gejala</a>
-                    <a href="/index" class="text-white bg-blue-700 px-3 py-2 rounded">Diagnosa</a>
+                    <a href="/" class="text-white bg-blue-700 px-3 py-2 rounded">Diagnosa</a>
                 </div>
             </div>
         </div>
@@ -141,7 +141,6 @@
                                         <div class="flex items-start mb-2">
                                             <div class="ml-3">
                                                 <p class="font-medium text-gray-800">{{ nama }}</p>
-                                                <p class="text-xs text-gray-500 mt-1">{{ kode }}</p>
                                             </div>
                                         </div>
                                         <div class="text-xs  text-gray-600 ml-3">
@@ -187,6 +186,9 @@
                                     <div>
                                         <span class="font-medium text-gray-800">{{ h }}</span>
                                         <p class="text-sm text-gray-600 mt-1">Penyakit yang umum ditemukan pada ayam dengan gejala-gejala yang dipilih.</p>
+                                        <a href="/penyakit" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                                            Lihat Detail Penyakit
+                                        </a>
                                     </div>
                                 </li>
                             {% endfor %}

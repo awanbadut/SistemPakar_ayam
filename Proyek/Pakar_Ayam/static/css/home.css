@@ -1,0 +1,33 @@
+.hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: scale(1.03);
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.stat-card {
+    transition: all 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+}

@@ -6,9 +6,13 @@
     <title>Home - WanHewani</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/home.css">
 </head>
-<body>
-    <nav class="bg-blue-600 shadow-lg">
+
+
+<body class="bg-gray-50 min-h-screen">
+
+    <nav class="bg-blue-600 shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -24,5 +28,635 @@
             </div>
         </div>
     </nav>
+    <!-- Circular Icons -->
+    <div class="fixed bottom-4 right-4 flex flex-col space-y-3">
+        <a href="#beranda" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="#tentang" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-star"></i>
+        </a>
+        <a href="#tentang" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-info-circle"></i>
+        </a>
+        <a href="#testimoni" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-comments"></i>
+        </a>
+        <a href="/diagnosa" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-stethoscope"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative bg-gradient-blue py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Sistem Pakar Diagnosa Penyakit Hewan Ternak</h1>
+                    <p class="text-xl text-blue-100 mb-8">Solusi praktis untuk mendeteksi gejala dan mendiagnosa penyakit pada hewan ternak Anda dengan cepat dan akurat.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/diagnosa" class="bg-white text-blue-600 hover:bg-blue-100 font-semibold px-6 py-3 rounded-lg shadow-lg transition flex items-center justify-center relative z-10">
+                            <i class="fas fa-stethoscope mr-2"></i>Mulai Diagnosa
+                        </a>
+                        <a href="#fitur" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-6 py-3 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-info-circle mr-2"></i>Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 bg-yellow-400 w-16 h-16 rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-4 -right-4 bg-blue-400 w-20 h-20 rounded-full opacity-20"></div>
+                        <video autoplay muted loop class="rounded-2xl shadow-2xl relative z-5 animate-float">
+                            <source src="../static/images/ayam_sehat.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
+            <path fill="#f9fafb" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 text-center border-t-4 border-blue-500">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800">5+++</h3>
+                    <p class="text-gray-600 mt-2">Basis Data Penyakit</p>
+                </div>
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 text-center border-t-4 border-green-500">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800">95%</h3>
+                    <p class="text-gray-600 mt-2">Akurasi Diagnosa</p>
+                </div>
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 text-center border-t-4 border-yellow-500">
+                    <div class="text-yellow-500 text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800">10.000+</h3>
+                    <p class="text-gray-600 mt-2">Pengguna Aktif</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fitur" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">WanHewani menawarkan berbagai fitur inovatif untuk membantu peternak mendiagnosa penyakit hewan ternak dengan cepat dan akurat.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-blue-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-stethoscope text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Diagnosa Cepat</h3>
+                        <p class="text-gray-600">Dapatkan diagnosa penyakit hewan ternak hanya dalam hitungan menit dengan memilih gejala yang terlihat.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-green-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-medical text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Basis Data Lengkap</h3>
+                        <p class="text-gray-600">Didukung dengan database penyakit yang komprehensif dan terus diperbarui oleh dokter hewan berpengalaman.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-yellow-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-user-md text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Rekomendasi Pengobatan</h3>
+                        <p class="text-gray-600">Terima saran penanganan dan pengobatan yang tepat berdasarkan hasil diagnosa penyakit.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-purple-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-paw text-purple-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Multi-Hewan</h3>
+                        <p class="text-gray-600">Mendukung berbagai jenis hewan ternak seperti ayam, kambing, sapi, dan domba dalam versi premium.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-red-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-mobile-alt text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Mudah Digunakan</h3>
+                        <p class="text-gray-600">Antarmuka yang intuitif dan responsif, dapat diakses dari perangkat apa saja, kapan saja, di mana saja.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="bg-indigo-500 h-2"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-indigo-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Konsultasi Dokter</h3>
+                        <p class="text-gray-600">Terhubung dengan dokter hewan berpengalaman untuk diskusi lebih lanjut tentang hasil diagnosa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cara Kerja</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Diagnosa penyakit hewan ternak Anda dalam 3 langkah mudah!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 relative">
+                    <div class="absolute -top-5 -left-5 w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">1</div>
+                    <div class="pt-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Pilih Jenis Hewan</h3>
+                        <p class="text-gray-600">Pilih jenis hewan ternak yang ingin didiagnosa (ayam, kambing, sapi, atau domba).</p>
+                        <img src="https://media.istockphoto.com/id/1453949844/id/foto/tampak-belakang-pria-dewasa-menunjuk-ke-dinding-putih-di-depannya.jpg?s=2048x2048&w=is&k=20&c=L1wrS1YXGkbhYeZxsZh4pHRwAQjXgMnfuX70oye2O98=" alt="Pilih Hewan" class="rounded-lg mt-4 w-full">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 relative">
+                    <div class="absolute -top-5 -left-5 w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">2</div>
+                    <div class="pt-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Input Gejala</h3>
+                        <p class="text-gray-600">Pilih gejala-gejala yang terlihat pada hewan ternak Anda dari daftar yang tersedia pilih maximal 3.</p>
+                        <img src="https://media.istockphoto.com/id/2149613344/id/foto/seorang-pria-menunjukkan-ekspresi-wajah-bingung-saat-bekerja-menggunakan-laptop.jpg?s=2048x2048&w=is&k=20&c=XjL05WpcowCrLnUlDTYTHGHkic1sODZ5yWfz4WMr6h8=" alt="Input Gejala" class="rounded-lg mt-4 w-full">
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 relative">
+                    <div class="absolute -top-5 -left-5 w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">3</div>
+                    <div class="pt-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Dapatkan Hasil</h3>
+                        <p class="text-gray-600">Terima hasil diagnosa dan rekomendasi penanganan untuk penyakit yang terdeteksi.makanya gaperlu cemasss</p>
+                        <img src="https://media.istockphoto.com/id/2170120677/id/foto/seorang-pengusaha-menunjukkan-ekspresi-bersemangat-saat-melihat-ponselnya.jpg?s=2048x2048&w=is&k=20&c=EOIk-IEOT0kbH3K9XfEj8nnzvkUeACHAEvi0dqM1XTA=" alt="Hasil Diagnosa" class="rounded-lg mt-4 w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Testimoni Pengguna</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Apa kata peternak tentang pengalaman mereka menggunakan WanHewani.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"WanHewani sangat membantu saya dalam mendeteksi penyakit ayam-ayam saya lebih awal. Berkat diagnosa yang cepat, saya bisa melakukan tindakan pencegahan dan pengobatan yang tepat."</p>
+                    <div class="flex items-center">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">
+                                <i class="fas fa-user mr-2"></i>Akbaro Hiyatno
+                            </h4>
+                            <p class="text-gray-600 text-sm">Peternak Ayam, Limau Manis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Sebagai dokter hewan, saya merekomendasikan WanHewani kepada para peternak. Sistemnya akurat dan membantu peternak untuk mengenali gejala penyakit serta mencari bantuan medis secepatnya."</p>
+                    <div class="flex items-center">
+                        <div>
+                        <h4 class="font-semibold text-gray-800">
+                            <i class="fas fa-user mr-2"></i>drh. Adot Pamborang
+                        </h4>
+                            <p class="text-gray-600 text-sm">Dokter Hewan, Pauh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Saya sudah berlangganan versi premium selama 6 bulan. Fitur konsultasi dokter hewan sangat bermanfaat, terutama karena lokasi peternakan saya jauh dari klinik hewan terdekat."</p>
+                    <div class="flex items-center">
+                        <div class="flex items-center">
+                            <div>
+                            <h4 class="font-semibold text-gray-800">
+                                <i class="fas fa-user mr-2"></i>Tono Cangokto
+                            </h4>
+                                <p class="text-gray-600 text-sm">Peternak Sapi, Kuranji</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="../static/images/image.png" alt="Tim WanHewani" class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Tentang WanHewani</h2>
+                    <p class="text-gray-600 mb-6">
+                        Wanhewani adalah sebuah sistem yang saya bangun sendiri, mulai dari desain hingga implementasi. Nama ini terinspirasi dari semangat untuk membantu peternak mengenali penyakit ayam sejak dini. Meskipun saya mengerjakannya seorang diri, saya tidak pernah merasa sendiri.</p>
+                    <p class="text-gray-600 mb-6">
+                        Kenapa saya menyebut "kami" atau "tim"? Karena ada orang-orang luar biasa yang telah membersamai saya dalam perjalanan ini—baik dalam bentuk dukungan moral, semangat, atau sekadar hadir saat saya butuh dorongan. Mereka bukan developer dari sistem ini, tapi mereka adalah bagian penting dari energi di baliknya. Bagi saya, merekalah tim saya</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-600 text-white hover:bg-blue-700 font-semibold px-6 py-3 rounded-lg shadow transition flex items-center justify-center">
+                            <i class="fas fa-users mr-2"></i>Tim Kami
+                        </a>
+                        <a href="#" class="bg-gray-700 text-white hover:bg-gray-800 font-semibold px-6 py-3 rounded-lg shadow transition flex items-center justify-center">
+                            <i class="fas fa-handshake mr-2"></i>Kerjasama
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium CTA Section -->
+    <section class="py-16 bg-gradient-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-8 border border-white border-opacity-20">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-2/3 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Tingkatkan ke Versi Premium!</h2>
+                        <p class="text-xl text-blue-100 mb-6">
+                            Akses fitur lengkap WanHewani untuk diagnosa semua jenis hewan ternak. Dapatkan rekomendasi pengobatan yang komprehensif dan konsultasi dengan dokter hewan.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Semua jenis hewan ternak</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Rekomendasi pengobatan</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Konsultasi dokter hewan</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span>Laporan diagnosa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 text-center">
+                        <div class="bg-white rounded-xl shadow-lg p-6 text-gray-800">
+                            <h3 class="text-2xl font-bold mb-2">Harga Premium</h3>
+                            <p class="text-gray-600 mb-4">Mulai dari</p>
+                            <div class="text-4xl font-bold text-blue-600 mb-4">Rp 99.000<span class="text-sm font-normal text-gray-600">/bulan</span></div>
+                            <a href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025051104720328" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+                                Berlangganan Sekarang
+                            </a>
+                            <p class="text-xs text-gray-500 mt-3">Tersedia paket bulanan dan tahunan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Pertanyaan Umum</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Jawaban untuk pertanyaan yang sering diajukan tentang WanHewani.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 bg-gray-50 rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Seberapa akurat hasil diagnosa WanHewani?</h3>
+                    <p class="text-gray-600">
+                        WanHewani memiliki tingkat akurasi hingga 95% berdasarkan gejala yang diinput. Namun, hasil diagnosa tidak menggantikan pemeriksaan langsung oleh dokter hewan profesional.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 bg-gray-50 rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Apakah saya dapat menggunakan WanHewani secara gratis?</h3>
+                    <p class="text-gray-600">
+                        Ya, WanHewani menyediakan versi gratis dengan fitur diagnosa untuk ayam. Untuk akses ke diagnosa hewan ternak lainnya dan fitur tambahan, Anda perlu berlangganan versi premium.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 bg-gray-50 rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Bagaimana cara berlangganan versi premium?</h3>
+                    <p class="text-gray-600">
+                        Anda dapat berlangganan versi premium dengan mengklik tombol "Dapatkan Premium" atau "Berlangganan Sekarang" yang tersedia di website. Pembayaran dapat dilakukan melalui berbagai metode pembayaran termasuk DANA, transfer bank, dan e-wallet lainnya.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 bg-gray-50 rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Apakah WanHewani tersedia dalam bentuk aplikasi mobile?</h3>
+                    <p class="text-gray-600">
+                        Saat ini WanHewani dapat diakses melalui browser web di perangkat apa pun, termasuk smartphone. Kami sedang dalam proses pengembangan aplikasi mobile khusus yang akan diluncurkan dalam waktu dekat.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-gray-50 rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Bagaimana data yang saya masukkan digunakan?</h3>
+                    <p class="text-gray-600">
+                        Data yang Anda masukkan hanya digunakan untuk keperluan diagnosa dan peningkatan akurasi sistem. Kami menjamin privasi data Anda dan tidak akan membagikannya kepada pihak ketiga tanpa persetujuan Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 bg-gradient-blue p-8 text-white">
+                        <h2 class="text-3xl font-bold mb-6">Hubungi Kami</h2>
+                        <p class="mb-8">Ada pertanyaan atau saran? Jangan ragu untuk menghubungi tim WanHewani.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p>Jl. Pahlawan No. 123, Padang</p>
+                                    <p>Sumatera Barat, Indonesia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p>info@wanhewani.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p>+62 852 7948 6060</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-semibold mb-4">Ikuti Kami</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-facebook-f text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-twitter text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-instagram text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-youtube text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Kirim Pesan</h3>
+                        
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subjek</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-blue-600 text-white hover:bg-blue-700 font-semibold px-6 py-3 rounded-lg shadow transition w-full">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-600 text-white text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-6">Siap Mencoba WanHewani?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Diagnosa penyakit hewan ternak Anda dengan cepat dan akurat. Mulai sekarang secara gratis!</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="/diagnosa" class="bg-white text-blue-600 hover:bg-blue-100 font-semibold px-8 py-4 rounded-lg shadow-lg transition">
+                    Mulai Diagnosa
+                </a>
+                <a href="#premium" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-4 rounded-lg transition">
+                    Lihat Paket Premium
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6 mt-5 bg-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-stethoscope text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">WanHewani</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Sistem pakar diagnosa penyakit hewan ternak untuk membantu peternak menjaga kesehatan hewan ternaknya.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="#fitur" class="text-gray-400 hover:text-white transition">Fitur</a></li>
+                        <li><a href="#tentang" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#testimoni" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="/diagnosa" class="text-gray-400 hover:text-white transition">Mulai Diagnosa</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Layanan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/diagnosa" class="text-gray-400 hover:text-white transition">Diagnosa Penyakit</a></li>
+                        <li><a href="/penyakit" class="text-gray-400 hover:text-white transition">Informasi Penyakit</a></li>
+                        <li><a href="/gejala" class="text-gray-400 hover:text-white transition">Daftar Gejala</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Konsultasi Dokter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Artikel Kesehatan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Jl. Pahlawan No. 123, Malang, Sumatra Barat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">info@wanhewani.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+62 852 7948 6060</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 WanHewani. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.querySelector('.md\\:flex');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Animated elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.feature-card, .testimonial-card, .stat-card');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                // If element is in viewport
+                if(position.top < window.innerHeight && position.bottom >= 0) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
 </body>
 </html>

@@ -20,7 +20,7 @@
                     <a href="/" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Home</a>
                     <a href="/penyakit" class="text-white bg-blue-700 px-3 py-2 rounded">Penyakit</a>
                     <a href="/gejala" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Gejala</a>
-                    <a href="/index" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Diagnosa</a>
+                    <a href="/diagnosa" class="text-white hover:bg-blue-700 px-3 py-2 rounded">Diagnosa</a>
                 </div>
             </div>
         </div>
@@ -88,8 +88,46 @@
                     </p>
                 </div>
             </div>
+
+        <!-- menu penyakit -->
+        <div class="mt-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Daftar Menu Penyakit</h2>
+            <ul class="space-y-2">
+                <li>
+                    <a href="#P01" class="text-blue-600 hover:underline flex items-center">
+                        <i class="fas fa-virus mr-2"></i>
+                        P01: Newcastle Disease (ND)
+                    </a>
+                </li>
+                <li>
+                    <a href="#P02" class="text-blue-600 hover:underline flex items-center">
+                        <i class="fas fa-viruses mr-2"></i>
+                        P02: Avian Influenza (Flu Burung)
+                    </a>
+                </li>
+                <li>
+                    <a href="#P03" class="text-blue-600 hover:underline flex items-center">
+                        <i class="fas fa-virus mr-2"></i>
+                        P03: Gumboro (Infectious Bursal Disease)
+                    </a>
+                </li>
+                <li>
+                    <a href="#P04" class="text-blue-600 hover:underline flex items-center">
+                        <i class="fas fa-bacterium mr-2"></i>
+                        P04: Coryza (Snot)
+                    </a>
+                </li>
+                <li>
+                    <a href="#P05" class="text-blue-600 hover:underline flex items-center">
+                        <i class="fas fa-bacterium mr-2"></i>
+                        P05: Kolera Ayam (Fowl Cholera)
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <!-- Header -->
         
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 m">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8"></div>
             <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6">
                 <h1 class="text-3xl font-bold text-white flex items-center">
                     <i class="fas fa-virus mr-3"></i>
@@ -113,8 +151,8 @@
                     </div>
                 </div>
 
-                <!-- Newcastle Disease -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                <!-- Menu Penyakit -->
+                <div id="P01" class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
                     <div class="bg-gradient-to-r from-red-500 to-red-700 p-4">
                         <h2 class="text-xl font-bold text-white flex items-center">
                             <i class="fas fa-virus-covid mr-2"></i>
@@ -184,7 +222,7 @@
                 </div>
 
                 <!-- Avian Influenza -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                <div id="P02" class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
                     <div class="bg-gradient-to-r from-purple-500 to-purple-700 p-4">
                         <h2 class="text-xl font-bold text-white flex items-center">
                             <i class="fas fa-viruses mr-2"></i>
@@ -254,7 +292,7 @@
                 </div>
 
                 <!-- Gumboro -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                <div id="P03" class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
                     <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-4">
                         <h2 class="text-xl font-bold text-white flex items-center">
                             <i class="fas fa-virus mr-2"></i>
@@ -324,7 +362,7 @@
                 </div>
 
                 <!-- Coryza -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                <div id="P04" class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
                     <div class="bg-gradient-to-r from-green-500 to-green-700 p-4">
                         <h2 class="text-xl font-bold text-white flex items-center">
                             <i class="fas fa-bacterium mr-2"></i>
@@ -394,9 +432,9 @@
                 </div>
 
                 <!-- Kolera Ayam -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
+                <div  class="border border-gray-200 rounded-xl overflow-hidden mb-8 shadow-md hover:shadow-lg transition">
                     <div class="bg-gradient-to-r from-yellow-500 to-yellow-700 p-4">
-                        <h2 class="text-xl font-bold text-white flex items-center">
+                        <h2 id="P05" class="text-xl font-bold text-white flex items-center">
                             <i class="fas fa-bacterium mr-2"></i>
                             P05: Kolera Ayam (Fowl Cholera)
                         </h2>
