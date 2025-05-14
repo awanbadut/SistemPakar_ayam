@@ -134,9 +134,6 @@
                         {% for kode, nama in gejala.items() %}
                             <div class="gejala-card border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-blue-400" onclick="toggleGejala(this, '{{ kode }}')">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 mr-3">
-                                        <img src="{{ url_for('static', filename='images/gejala/{{ kode }}.jpg') }}" alt="Gejala" class="rounded-lg">
-                                    </div>
                                     <div class="flex-grow">
                                         <div class="flex items-start mb-2">
                                             <div class="ml-3">
@@ -181,7 +178,7 @@
                             {% for h in hasil %}
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mr-3">
-                                        <img src="/api/placeholder/60/60" alt="Penyakit" class="rounded-lg">
+                                        <i class="fas fa-virus text-red-500 text-2xl"></i>
                                     </div>
                                     <div>
                                         <span class="font-medium text-gray-800">{{ h }}</span>
@@ -207,7 +204,7 @@
                                 <div class="mt-2 p-2 bg-white rounded border border-blue-100">
                                     <p class="text-sm font-medium text-blue-800">Dokter hewan terdekat:</p>
                                     <div class="mt-2 flex items-center">
-                                        <i class="fas fa-user-md text-blue-500 mr-2"></i>
+                                        <img src="{{ url_for('static', filename='images/zikry.jpg') }}" alt="Foto drh. Zikry Kurniawan" class="w-16 h-16 rounded-full mr-3">
                                         <span class="text-gray-700 text-sm">drh. Zikry Kurniawan - 0852-7948-6060</span>
                                     </div>
                                 </div>

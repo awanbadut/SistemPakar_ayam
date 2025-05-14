@@ -148,9 +148,6 @@
                         class="bg-white border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition duration-200 cursor-pointer"
                         onclick="showGejalaDetail('{{ kode }}', '{{ nama }}')">
                         <div class="flex items-center">
-                            <div class="flex-shrink-0 mr-4">
-                                <img src="{{ url_for('static', filename='images/gejala/' + kode + '.jpg') }}" alt="{{ nama }}" class="w-16 h-16 rounded-lg object-cover">
-                            </div>
                             <div>
                                 <h3 class="text-gray-800 font-semibold">{{ nama }}</h3>
                                 <p class="text-sm text-gray-500">Kode: {{ kode }}</p>
